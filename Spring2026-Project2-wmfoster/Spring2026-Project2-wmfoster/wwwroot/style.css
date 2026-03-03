@@ -1,0 +1,186 @@
+﻿:root {
+    --glass: rgba(0, 0, 0, 0.55);
+    --border: rgba(255, 255, 255, 0.18);
+    --accent: #9ee7ff;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-image: url("images/bg1.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Main container */
+.main {
+    max-width: 1050px;
+    width: 100%;
+    padding: 0 14px;
+    text-align: center;
+}
+
+/* Before searching: no big top margin so it sits centered */
+body:not(.searched) .main {
+    margin: 0 auto;
+}
+
+/* After searching: push content down a bit like Google */
+body.searched .main {
+    margin: 60px auto 40px;
+}
+
+/* Search engine name */
+#brand {
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 64px;
+    font-weight: bold;
+    color: red;
+}
+
+/* Search box */
+#query {
+    width: min(720px, 95%);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Buttons container */
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Button base */
+input[type="button"] {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+    input[type="button"]:hover {
+        opacity: 0.92;
+    }
+
+/* Search button */
+#searchBtn {
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+}
+
+    #searchBtn:hover {
+        background-color: #007BFF;
+        color: white;
+    }
+
+/* Lucky button */
+#luckyBtn {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+}
+
+    #luckyBtn:hover {
+        background-color: #e6c200;
+    }
+
+/* REQUIRED: hidden initially */
+#searchResults,
+#time {
+    visibility: hidden;
+}
+
+/* Section headings */
+.sectionTitle {
+    margin: 22px 0 10px;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: left;
+}
+
+/* Card blocks */
+.card {
+    padding: 12px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* Result links */
+.resultLink {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 800;
+}
+
+    .resultLink:hover {
+        text-decoration: underline;
+    }
+
+.muted {
+    opacity: 0.85;
+}
+
+/* Related searches pills */
+.pillRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pill {
+    background: rgba(0,0,0,0.35);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 10px;
+}
+
+/* Glass panel appears after searching */
+.main.resultsMode {
+    background: rgba(0, 0, 0, 0.60);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+/* Results container layout */
+#searchResults.resultsMode {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 12px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+    #searchResults.resultsMode {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Center everything BEFORE searching */
+body:not(.searched) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Once searched, switch back to normal scrolling layout */
+body.searched {
+    display: block;
+}

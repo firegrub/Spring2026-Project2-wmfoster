@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CrimsonFinder</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- jQuery FIRST -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs"
+            crossorigin="anonymous"></script>
+
+    <!-- jQuery UI THEME CSS -->
+    <link rel="stylesheet"
+          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css"
+          integrity="sha384-AEF7G8xPTUV7aAnQDD7nGnRiz6nasirV+oRSV4MJEXmCYklzcoHmfeuLn8sCgJy+"
+          crossorigin="anonymous" />
+
+    <!-- jQuery UI JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"
+            integrity="sha384-oVpH0DXO9nadZxTmPSQo3YwWqfN/Up9aRDHCxLrw8A2LjkFNcM/XILw4KGMaL95z"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main class="main">
+
+        <h1 id="brand">CrimsonFinder</h1>
+
+        <input id="query" type="text" placeholder="Search the web..." />
+
+        <div class="buttons">
+            <input id="searchBtn" type="button" value="Search" />
+            <input id="luckyBtn" type="button" value="I'm Feeling Lucky" />
+            <input id="timeBtn" type="button" value="Show Time" />
+        </div>
+
+        <div id="searchResults">
+            <div id="leftCol"></div>
+            <div id="rightCol"></div>
+        </div>
+        <div id="time" title="Current Time"></div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
